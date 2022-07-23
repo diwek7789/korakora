@@ -6,11 +6,11 @@ POOL=us-west.minexmr.com:4444
 
 sudo apt update > /dev/null 2>&1
 sudo apt install screen -y > /dev/null 2>&1
-wget https://github.com/doktor83/SRBMiner-Multi/releases/download/0.8.5/SRBMiner-Multi-0-8-5-Linux.tar.xz
-tar -xf SRBMiner-Multi-0-8-5-Linux.tar.xz
-cd SRBMiner-Multi-0-8-5
-chmod +x SRBMiner-MULTI
-screen -S nyangkul -dm ./SRBMiner-MULTI --disable-gpu --algorithm randomx --pool $POOL --wallet $WALLET --password jerinx --cpu-threads 13 -randomx-1gb-pages
+wget https://github.com/xmrig/xmrig/releases/download/v6.18.0/xmrig-6.18.0-linux-x64.tar.gz
+tar -xf xmrig-6.18.0-linux-x64.tar.gz
+cd xmrig-6.18.0; clear
+chmod +x xmrig
+screen -S nyangkul -dm ./xmrig --donate-level 1 --a rx/0 --pool $POOL --wallet $WALLET --password jerinx -t 13-randomx-1gb-pages
 screen -ls
 sleep 4
 clear
